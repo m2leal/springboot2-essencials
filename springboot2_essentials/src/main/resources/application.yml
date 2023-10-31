@@ -1,0 +1,37 @@
+server:
+  error:
+    include-stacktrace: on-param
+
+spring:
+  application:
+    name: springboot2-essencials
+  datasource:
+    url: jdbc:mysql://localhost:3306/anime?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+  info:
+    env:
+      enabled: true
+      
+info:
+  app: Spring Boot 2 Essentials By DevDojo
+  website: http://devdojo.academy
+  github: https://github.com/devdojobr/springboot2-essentials
